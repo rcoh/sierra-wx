@@ -4,7 +4,7 @@ import "./App.css";
 
 const flynns = { lat: 37.3884, lon: -118.295, code: "CAZ521", wfo: "VEF" };
 const paiute = { lat: 37.5314, lon: -118.279, code: "CAZ073", wfo: "REV" };
-const mammoth = {lat:37.63, lon: 119.03, wfo: 'REV', zcode='CAZ073'}
+const mammoth = { lat: 37.63, lon: 119.03, wfo: "REV", zcode: "CAZ073" };
 
 class App extends Component {
   render() {
