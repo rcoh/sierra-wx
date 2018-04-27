@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import Iframe from "./Iframe";
 
 const flynns = { lat: 37.3884, lon: -118.295, code: "CAZ521", wfo: "VEF" };
 const paiute = { lat: 37.5314, lon: -118.279, code: "CAZ073", wfo: "REV" };
@@ -25,7 +26,19 @@ class App extends Component {
     const paiuteLaunchModel = <NoaaModel loc={paiute} />;
     const mammothModel = <NoaaModel loc={mammoth} />;
     const mammothLive = (
-      <img src="http://patrol.mammothmountain.com/Reserved.ReportViewerWebControl.axd?ReportSession=tgnfvy45p105qqrv0blap5nz&Culture=1033&CultureOverrides=True&UICulture=1033&UICultureOverrides=True&ReportStack=1&ControlID=15852b0946e8491c8d67d7a4ebcae588&OpType=ReportImage&IterationId=04474ecdfd5a4019a84ddffdff3e2c06&StreamID=C_7iT0_1" />
+      <Iframe
+        position="relative"
+        height="500px"
+        url="http://patrol.mammothmountain.com/RptPage.aspx?Rpt=WGPH&Range=60&GrpBy=1&RptRender=True&Location=SMT_WGPH"
+      />
+    );
+
+    const bishopWindsAloft = (
+      <Iframe
+        position="relative"
+        height="500px"
+        url="http://www.usairnet.com/cgi-bin/Winds/Aloft.cgi?icao=BIH&hr=06"
+      />
     );
     const whiteLive = <img src="https://wrcc.dri.edu/cgi-bin/g2sage.pl?wmtn" />;
     const barLive = <img src="https://wrcc.dri.edu/cgi-bin/g2sage.pl?barc" />;
@@ -42,11 +55,21 @@ class App extends Component {
           title="White Mountain Forecast"
           src={whiteMountainModel}
         />
-        <LabeledImage title="White Mountain Live [sometimes stale]" src={whiteLive} />
-        <LabeledImage title="Mount Barcroft Live [sometimes stale]" src={barLive} />
+        <LabeledImage
+          title="White Mountain Live [sometimes stale]"
+          src={whiteLive}
+        />
+        <LabeledImage
+          title="Mount Barcroft Live [sometimes stale]"
+          src={barLive}
+        />
         <LabeledImage title="Mammoth Mountain Forecast" src={mammothModel} />
-        <LabeledImage title="Mammoth Mountain Live (in venturi)" src={mammothLive} />
+        <LabeledImage
+          title="Mammoth Mountain Live (in venturi)"
+          src={mammothLive}
+        />
         <LabeledImage title="Walts Point Forecast" src={waltsModel} />
+        <LabeledImage title="Bishop Winds Aloft" src={bishopWindsAloft} />
       </div>
     );
   }
