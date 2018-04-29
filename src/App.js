@@ -29,7 +29,7 @@ class App extends Component {
       <Iframe
         position="relative"
         height="500px"
-        url="http://patrol.mammothmountain.com/RptPage.aspx?Rpt=WGPH&Range=60&GrpBy=1&RptRender=True&Location=SMT_WGPH"
+        url="http://patrol.mammothmountain.com/RptPage.aspx?Rpt=WGPH&Range=1440&GrpBy=60&RptRender=True&Location=SMT_WGPH"
       />
     );
 
